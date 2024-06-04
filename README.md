@@ -25,9 +25,10 @@ DApp (React):
 
 To run:
   Open VS Code terminal.
-  1) git clone https://github.com/AashrayGithub/LYNC-Solidity-Intern-Blockchain-Developer-Task.git
-  2) npm i
-  3) npm run
+  1) git init
+  2) git clone https://github.com/AashrayGithub/LYNC-Solidity-Intern-Blockchain-Developer-Task.git
+  3) npm i
+  4) npm run
 
 OR
   1) Click on <>Code dropdown and then click on Download ZIP.
