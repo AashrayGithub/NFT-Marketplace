@@ -22,3 +22,12 @@ DApp (React):
   List NFTs
   Buy NFTs
   View listings
+
+To run:
+  Open VS Code terminal.
+  1) git clone https://github.com/AashrayGithub/LYNC-Solidity-Intern-Blockchain-Developer-Task.git
+  2) npm i
+  3) npm run
+
+
+NOTE: Due to high gas costs in the Hardhat development environment and limited testnet funds, this project was deployed using Remix with a connected MetaMask wallet utilizing the Sepolia testnet. The deployed contract address is 0x68cf0f8c47c46bbda4f086a38d3afe617cad5f17. 
