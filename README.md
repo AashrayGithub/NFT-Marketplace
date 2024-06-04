@@ -1,11 +1,24 @@
-# Basic NFT Marketplace end to end
+NFT Marketplace with Chainlink Oracle
 
-This code is for the Tutorial [Build your own NFT Marketplace from Scratch](https://docs.alchemy.com/alchemy/) built by [alchemy.com](https://alchemy.com)
+This project implements a simple NFT marketplace smart contract on the Ethereum blockchain.
 
-To set up the repository and run the marketplace locally, run the below
-```bash
-git clone https://github.com/OMGWINNING/NFT-Marketplace-Tutorial
-cd NFT-Marketplace-Tutorial
-npm install
-npm start
-```
+Key Features
+
+  Users can list NFTs for sale in USD.
+  A Chainlink oracle is used to convert the USD price to ETH.
+  The contract acts as an escrow during transactions.
+  Admin receives a 10% commission on sales.
+
+
+Smart Contract (Solidity):
+
+  NFTMarketplace.sol contains the smart contract code.
+  Uses OpenZeppelin and Chainlink libraries.
+
+
+DApp (React):
+
+ A basic DApp allows users to:
+  List NFTs
+  Buy NFTs
+  View listings

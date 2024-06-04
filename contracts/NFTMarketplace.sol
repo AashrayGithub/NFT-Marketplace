@@ -14,6 +14,7 @@ contract NFTMarketplace is ERC721URIStorage {
     address payable owner;
     address public oracleAddress;
     uint256 public constant DECIMALS = 18; // ETH decimals
+    uint256 public constant CONSTANT = 8;  // Because solidity doesn't support decimals so getLatestEthPrice function returns the original answer times 10^8.
 
     struct ListedToken {
         uint256 tokenId;
@@ -70,7 +71,7 @@ contract NFTMarketplace is ERC721URIStorage {
         _setTokenURI(newTokenId, tokenURI);
 
         uint256 ethPrice = getLatestEthPrice();
-        uint256 ethPriceInWei = (priceInUsd * (10 ** DECIMALS)) / ethPrice;
+        uint256 ethPriceInWei = (priceInUsd * (10 ** DECIMALS) * (10 ** CONSTANT)) / ethPrice; //adjusting the decimal number error due to getLatestEthPrice here.
 
         createListedToken(newTokenId, ethPriceInWei);
 
@@ -137,7 +138,7 @@ contract NFTMarketplace is ERC721URIStorage {
         uint256 price = idToListedToken[tokenId].priceInWei;
         address seller = idToListedToken[tokenId].seller;
         uint256 platformFee = calculatePlatformFee(price);
-        require(msg.value == price + platformFee, "Please submit the asking price plus platform fee in order to complete the purchase");
+        require(msg.value == price + platformFee, "The provided amount doesn't match the asking price plus platform fee.");
 
         idToListedToken[tokenId].currentlyListed = false;
         idToListedToken[tokenId].seller = payable(msg.sender);
