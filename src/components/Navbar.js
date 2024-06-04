@@ -18,11 +18,13 @@ const location = useLocation();
 const [currAddress, updateAddress] = useState('0x');
 
 async function getAddress() {
-  const ethers = require("ethers");
+try{  const ethers = require("ethers");
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
   const addr = await signer.getAddress();
-  updateAddress(addr);
+  updateAddress(addr);}catch(e){
+    console.log("error" ,e)
+  }
 }
 
 function updateButton() {
@@ -45,13 +47,15 @@ async function connectWebsite() {
     //     params: [{ chainId: '0x5' }],
     //  })
     // }  
-    await window.ethereum.request({ method: 'eth_requestAccounts' })
+    try{await window.ethereum.request({ method: 'eth_requestAccounts' })
       .then(() => {
         updateButton();
         console.log("here");
         getAddress();
         window.location.replace(location.pathname)
-      });
+      });}catch(e){
+        alert("make sure u have metamask wallet")
+        console.log("error in connect wallet" ,e)}
 }
 
   useEffect(() => {
