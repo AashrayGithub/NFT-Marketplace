@@ -12,7 +12,7 @@ export default function Profile () {
     const [totalPrice, updateTotalPrice] = useState("0");
 
     async function getNFTData(tokenId) {
-        const ethers = require("ethers");
+      try { const ethers = require("ethers");
         let sumPrice = 0;
         //After adding your Hardhat network to your metamask, this code will get providers and signers
         const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -55,7 +55,10 @@ export default function Profile () {
         updateData(items);
         updateFetched(true);
         updateAddress(addr);
-        updateTotalPrice(sumPrice.toPrecision(3));
+        updateTotalPrice(sumPrice.toPrecision(3));}
+        catch(e){
+            console.log("error in getNFTDARA",e)
+        }
     }
 
     const params = useParams();
