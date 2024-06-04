@@ -29,5 +29,12 @@ To run:
   2) npm i
   3) npm run
 
+OR
+  1) Click on <>Code dropdown and then click on Download ZIP.
+  2) Extract the zip file
+  3) Open the extracted file
+  4) npm install
+  5) npm start
+
 
 NOTE: Due to high gas costs in the Hardhat development environment and limited testnet funds, this project was deployed using Remix with a connected MetaMask wallet utilizing the Sepolia testnet. The deployed contract address is 0x68cf0f8c47c46bbda4f086a38d3afe617cad5f17. 
