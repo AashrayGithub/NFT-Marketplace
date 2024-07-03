@@ -1,4 +1,4 @@
-LYNC - NFT Marketplace with Chainlink Oracle
+
 This project implements a user-friendly NFT marketplace on the Ethereum blockchain, leveraging Chainlink oracles for secure price conversions.
 
 Key Features:
